@@ -23,7 +23,7 @@ echo "[1/2] Build + lancement du dashboard..."
 cd dashboard
 npm install --silent
 npm run build
-screen -dmS dashboard npm start -- --port 8080
+screen -dmS dashboard npm start -- --port 3333
 cd "$PROJECT_DIR"
 echo "  Dashboard → http://$(hostname -I | awk '{print $1}'):8080/cryptovision"
 
