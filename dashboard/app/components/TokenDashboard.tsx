@@ -137,11 +137,11 @@ export default function TokenDashboard({ initialData }: { initialData: Candidate
   }), [rows])
 
   // ── Column header
-  const Th = ({ label, sk, hint }: { label: string; sk?: SortKey; hint?: string }) => (
+  const Th = ({ label, sk, hint, align = 'left' }: { label: string; sk?: SortKey; hint?: string; align?: 'left' | 'right' | 'center' }) => (
     <th
       title={hint}
       onClick={() => sk && handleSort(sk)}
-      className={`px-3 py-3 text-left text-[11px] font-medium text-slate-500 uppercase tracking-wider whitespace-nowrap select-none ${sk ? 'cursor-pointer hover:text-slate-300 transition-colors' : ''}`}
+      className={`px-3 py-3 text-${align} text-[11px] font-medium text-slate-500 uppercase tracking-wider whitespace-nowrap select-none ${sk ? 'cursor-pointer hover:text-slate-300 transition-colors' : ''}`}
     >
       {label}
       {sortKey === sk && (
@@ -252,17 +252,17 @@ export default function TokenDashboard({ initialData }: { initialData: Candidate
                   <th className="w-0.5 p-0" />
                   <th className="px-3 py-3 text-[11px] font-medium text-slate-600 w-8">#</th>
                   <Th label="Token" />
-                  <Th label="Score" sk="last_score" hint="Score de priorité /100" />
-                  <Th label="Liquidité" sk="liquidity_usd" />
-                  <Th label="Vol 24h" sk="volume_24h" />
-                  <Th label="Ratio" sk="vol_liq_ratio" hint="Vol / Liq" />
-                  <Th label="Txns" sk="txns_24h" />
-                  <Th label="Âge" sk="age_hours" />
-                  <Th label="Δ 24h" sk="price_change_24h" />
-                  <Th label="Top 10" sk="top10_holders_pct" hint="% supply dans les 10 premiers wallets" />
-                  <Th label="Mint" hint="Mint authority révoquée" />
-                  <Th label="Honey" hint="Honeypot détecté" />
-                  <Th label="Vu" sk="first_seen" />
+                  <Th label="Score" sk="last_score" hint="Score de priorité /100" align="center" />
+                  <Th label="Liquidité" sk="liquidity_usd" align="right" />
+                  <Th label="Vol 24h" sk="volume_24h" align="right" />
+                  <Th label="Ratio" sk="vol_liq_ratio" hint="Vol / Liq" align="right" />
+                  <Th label="Txns" sk="txns_24h" align="right" />
+                  <Th label="Âge" sk="age_hours" align="right" />
+                  <Th label="Δ 24h" sk="price_change_24h" align="right" />
+                  <Th label="Top 10" sk="top10_holders_pct" hint="% supply dans les 10 premiers wallets" align="right" />
+                  <Th label="Mint" hint="Mint authority révoquée" align="center" />
+                  <Th label="Honey" hint="Honeypot détecté" align="center" />
+                  <Th label="Vu" sk="first_seen" align="right" />
                   <Th label="Source" />
                 </tr>
               </thead>
