@@ -141,7 +141,7 @@ export default function TokenDashboard({ initialData }: { initialData: Candidate
     <th
       title={hint}
       onClick={() => sk && handleSort(sk)}
-      className={`px-3 py-3 text-${align} text-[11px] font-medium text-slate-500 uppercase tracking-wider whitespace-nowrap select-none ${sk ? 'cursor-pointer hover:text-slate-300 transition-colors' : ''}`}
+      className={`px-3 py-3 text-[11px] font-medium text-slate-500 uppercase tracking-wider whitespace-nowrap select-none ${align === 'right' ? 'text-right' : align === 'center' ? 'text-center' : 'text-left'} ${sk ? 'cursor-pointer hover:text-slate-300 transition-colors' : ''}`}
     >
       {label}
       {sortKey === sk && (
