@@ -154,7 +154,7 @@ export default function TokenDashboard({ initialData }: { initialData: Candidate
     <div className="min-h-screen bg-[#07070f] text-slate-200 font-sans">
 
       {/* ── Header ── */}
-      <header className="sticky top-0 z-10 border-b border-[#151525] bg-[#07070f]/90 backdrop-blur px-6 py-3 flex items-center justify-between">
+      <header className="sticky top-0 z-10 border-b border-[#151525] bg-[#07070f]/90 backdrop-blur px-4 py-3 flex items-center justify-between gap-2">
         <div className="flex items-center gap-3">
           <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
           <span className="font-semibold text-white tracking-tight text-sm">CRYPTOSION</span>
@@ -172,10 +172,10 @@ export default function TokenDashboard({ initialData }: { initialData: Candidate
         </div>
       </header>
 
-      <div className="p-5 space-y-4">
+      <div className="p-3 md:p-5 space-y-3 md:space-y-4">
 
         {/* ── Stats ── */}
-        <div className="grid grid-cols-4 gap-3">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
           {[
             { label: 'Candidats', val: stats.total, sub: 'après filtres actifs' },
             { label: 'Score moyen', val: stats.avgScore, sub: '/ 100' },
